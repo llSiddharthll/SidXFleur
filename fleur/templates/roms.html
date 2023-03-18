@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}ROMS{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+  .container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+  button{
+  width: 103%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.miui button {
+  width: 50%;
+  margin-left: 25%;
+}
+.miui h1{
+  text-align: center;
+}
+.custom h1{
+  text-align:center;
+}
+hr{
+  border: 5px solid black;
+  color: black;
+}
+@media screen and (max-width: 600px) {
+  *{
+    font-size:small;
+  }
+  h1{
+    font-size:medium;
+  }
+  .col-25, .col-75, input[type=submit], button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+</style>
+{% endblock %}
+{% block body %} 
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.” —Dale Carnegie</i></p>
+	</div>
+  </div>
+  <hr>
+  <section style="margin-top:30px">
+
+  <div class="miui">
+    <h1>MIUI Official Roms Link (old to new every rom) :</h1>
+    <button><a href="https://xiaomirom.com/en/rom/redmi-note-11s-poco-m4-pro-4g-fleur-global-fastboot-recovery-rom/" id="romlink">Click here to get rom</a></button>
+
+  </div>
+  <hr>
+  <div class="custom">
+  <h1>Unofficial Custom Rom Links :</h1>
+  <table class="table table-primary table-hover">
+    <thead>
+      <tr>
+        <th scope="col">S.NO.</th>
+        <th scope="col">NAME</th>
+        <th scope="col">Android</th>
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      {% for x in link %}
+      <tr class="animals table-warning">
+        <th scope="row">{{x.id}}</th>
+        <td><a href="rom_details/{{x.id}}" id="romlink">{{x.rom_name}}</a></td>
+        <td>{{x.android}}</td>
+        <td><a href="{{x.rom_link}}">Link</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+<script>
+  
+  function searchTable() {
+      var input, filter, found, table, tr, td, i, j;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+              if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  found = true;
+              }
+          }
+          if (found) {
+              tr[i].style.display = "";
+              found = false;
+          } else {
+              tr[i].style.display = "none";
+          }
+      }
+  }
+
+</script>
+  {% endblock %}
+

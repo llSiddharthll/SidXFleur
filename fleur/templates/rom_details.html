@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+</style>
+{% endblock %}
+{% block body %} 
+
+{% load crispy_forms_tags %}
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“The only way of discovering the limits of the possible is to venture a little way past them into the impossible.” ―Arthur C. Clarke</i></p>
+	</div>
+  </div>
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+
+<section style="margin-top:30px">
+  {% for x in data %}
+  <h1>{{x.rom_name}} Details :</h1> <br><br>
+    <ul>
+        <li>Version: {{x.version}}</li>
+        <li>Known bugs: {{x.bugs}}</li>
+        {% if x.fix == True %}
+        <li>Fixes: {{x.fix_file}}</li>
+        {% endif %}
+        <li>Credits Goes to :{{x.credit}}</li>
+        <li>Flashing Steps: </li>
+        <ol>
+            <li>Open TWRP recovery (steps to flash twrp - <a href="{% url 'twrp' %}">Click here</a> )
+            </li>
+            {% if x.fw == 'ga12' %}
+            <li>Flash this firmware (<a href="https://drive.google.com/file/d/1NV_OOsL7ZtET0DOSyNoh-tS0KWcRCNZ3/view?usp=drivesdk" target="_blank">here</a>)</li>
+            {% elif x.fw == 'ga11' %}
+            <li>Flash this firmware (<a href="https://drive.google.com/file/d/1-JxMnMohCopc_p7ihLehMtQlv5fxJTs8/view?usp=drivesdk" target="_blank">here</a>)</li>
+            {% elif x.fw == 'ia12' %}
+            <li>Flash this firmware ( <a href="https://drive.google.com/file/d/1-QQCWik7FK0-1wj-I8c6Rp-jVgX3yYVK/view?usp=drivesdk" target="_blank">here</a> )</li>
+            {% elif x.fw == 'ia11' %}
+            <li>Flash this firmware ( <a href="https://drive.google.com/file/d/1-hY9XsdnWWhAxhiExJNxMFRsKKwTrpKr/view?usp=drivesdk" target="_blank">here</a> )</li>
+            {% else %}
+            <li>No need to Flash Firmware</li>
+            {% endif %}
+            {% if x.boot == 'bga11' %}
+            <li>Flash this boot image (<a href="https://drive.google.com/file/d/1-dqw2tbg1mkRoe7R8d3Z3gDwUwgyr5n9/view?usp=drivesdk" target="_blank">here</a>)</li>
+            {% elif x.boot == 'bia11' %}
+            <li>Flash this boot image (<a href="https://drive.google.com/file/d/1-Y0XqHtykNuzlI7LdwpNTabkJUwsCnlN/view?usp=drivesdk" target="_blank">here</a>)</li>
+            {% else %}
+            <li>No need to Flash Boot image</li>
+            {% endif %}
+            <li>Flash {{x.rom_name}}</li>
+            <li>Flash dfe-neo (<a href="https://drive.google.com/file/d/1-r-7ehuRtfdsXpgbzE4LWQ2fx8engdbQ/view?usp=drivesdk" target="_blank">here</a>)</li>
+            <li>Format data</li>
+            <li>Reboot System</li>
+        </ol>
+    </ul>
+    {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+</style>
+{% endblock %}
+{% block body %} 
+{% load crispy_forms_tags %}
+
+<section class="sub-header"></section>
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“If you don't like the road you're walking, start paving another one.” —Dolly Parton</i></p>
+	</div>
+  </div>
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d695.6031118062933!2d80.94398384234852!3d26.927023890551382!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957aade3c54ed%3A0xa10b1aa702787bc4!2zMjbCsDU1JzM2LjAiTiA4MMKwNTYnMzkuMiJF!5e0!3m2!1sen!2sin!4v1659307179411!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span><h5>
+                        645A/602, Jankivihar Colony, jankipuram
+                    </h5>
+                    <p>Lucknow, Uttar Pradesh, India</p>
+                </span>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span><h5>
+                        +916307862150
+                    </h5>
+                    <p>Call Me Anytime</p>
+                </span>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope-o"></i>
+                    <span><h5>
+                        siddharthgreat443@gmail.com
+                    </h5>
+                    <p>Email Us Your Queries</p>
+                </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="" method="POST">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter email address" required>
+                <input type="text" name="subject" placeholder="Enter your subject" required>
+                <textarea rows="8" name="message" placeholder="Message"></textarea>
+                <button type="submit" class="hero-btn red-btn">Send Message</button>
+
+            </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

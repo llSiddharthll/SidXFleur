@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+</style>
+{% endblock %}
+{% block body %} 
+{% load crispy_forms_tags %}
+
+<section class="sub-header"></section>
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“If you don't like the road you're walking, start paving another one.” —Dolly Parton</i></p>
+	</div>
+  </div>
+<!--Login--> 
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
+
+{% endblock %}

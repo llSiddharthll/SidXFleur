@@ -1,0 +1,250 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} Upload here {%endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea
+   {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: both;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type="submit"] {
+    background-color: #04aa6d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:none;
+  }
+
+  button {
+    width: 102%;
+    background-color: #04aa6d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:none;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .container {
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
+    padding-right: 20px;
+  }
+
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  #link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type="submit"]
+     {
+      width: 99%;
+      margin-top: 0;
+    }
+    button{
+      width: 105%;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“You can get everything in life you want if you will just help enough other people get what they want.” —Zig Ziglar</i></p>
+	</div>
+  </div>
+<h1 id="main" style="text-align: center; padding-top: 40px">
+  <u> Hey you are here, now provide a Rom :</u>
+</h1>
+
+<div class="container" id="main">
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Rom Name :</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="fname"
+          name="rom_name"
+          placeholder="Enter Rom Name ..."
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Give Rom Link :</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="lname"
+          name="rom_link"
+          placeholder="Paste the link of file.."
+        />
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Android Version :</label>
+      </div>
+      <div class="col-75">
+        <input
+          required
+          type="text"
+          id="lname"
+          name="android"
+          placeholder="Android supported.."
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Release date :</label>
+      </div>
+      <div class="col-75">
+        <input
+          required
+          type="date"
+          id="lname"
+          name="version"
+          placeholder="Enter the release date.."
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Bugs (optional) :</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="bugs" placeholder="Bugs Names.." />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Credits (optional) :</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="lname"
+          name="credit"
+          placeholder="And credits goes too.."
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="firmware">Select Firmware :</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="fw_cat">
+          <option value="">--Choose An Option--</option>
+          <option value="no">Not required !!</option>
+          <option value="ga12">Global a12 v13.0.3</option>
+          <option value="ga11">Global a11 v13.0.7</option>
+          <option value="ia12">Indian a12 v13.0.3</option>
+          <option value="ia11">Indian a11 v13.0.5</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="boot">Select Boot image :</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="boot_cat">
+          <option value="">--Choose An Option--</option>
+          <option value="no">Not required !!</option>
+          <option value="bga11">Global a11 v13.0.7</option>
+          <option value="bia11">Indian a11 v13.0.5</option>
+        </select>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row">
+      <input type="submit" value="Submit" />
+    </div><br>
+    <button class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
+  </div><br>
+  </form>
+  <br /><br>
+</div>
+<br /><br />
+
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Home{% endblock %}
+{% block css %}
+<style>@media(max-width: 700px) {
+  .row{
+    --bs-gutter-x: 0;
+  }
+}</style>
+{% endblock %}
+{% block body %}
+
+  <section class="header">
+</section>
+
+<section class="clan">
+  <h1>Devices Information</h1>
+  <p>Mediatek is a hard nut to crack..</p>
+  <div class="row">
+    <div class="clan-col">
+
+      <a href="https://www.mi.com/global/product/redmi-note-11s/" target="_blank"
+        ><h3>Redmi Note 11S</h3></a
+      >
+      <p>
+        108MP pro-grade main camera <br />
+        90Hz FHD+ AMOLED DotDisplay <br />
+        33W Pro fast charging
+      </p>
+    </div>
+    <div class="clan-col">
+      <a href="https://www.poco.in/pocom4Pro" target="_blank"><h3>POCO M4 PRO 4G</h3></a>
+      <p>
+        90Hz AMOLED <br />
+        64MP triple camera <br />
+        33W Pro fast charging
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="campus">
+  <h1>MOST SEARCHED</h1>
+  <p>Some people are like clouds. When they disappear, it's a brighter day.</p>
+
+  <div class="row">
+    <div class="campus-col">
+      <img src="{% static 'romlogos//crdroid2.jpg' %}" />
+      <div class="layer">
+        <h3>Cr Droid</h3>
+      </div>
+    </div>
+    <div class="campus-col">
+      <img src="{% static 'romlogos//pixel_exp.jpg' %}" />
+      <div class="layer">
+        <h3>Pixel Experience Plus</h3>
+      </div>
+    </div>
+    <div class="campus-col">
+      <img src="{% static 'romlogos//dotos.jpg' %}" />
+      <div class="layer">
+        <h3>Dot OS</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="campus">
+  <div class="row">
+    <div class="campus-col" id="special">
+      <img src="{% static 'romlogos//arrowos.png' %}" />
+      <div class="layer">
+        <h3>Arrow OS</h3>
+      </div>
+    </div>
+    <div class="campus-col">
+      <img src="{% static 'romlogos//lineageos.png' %}" />
+      <div class="layer">
+        <h3>Lineage OS</h3>
+      </div>
+    </div>
+    <div class="campus-col">
+      <img src="{% static 'romlogos//superior.jpg' %}" />
+      <div class="layer">
+        <h3>Superior OS</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="facilities">
+  <h1>Our facilities</h1>
+  <p>
+    Light travels faster than sound. This is why some people appear bright until
+    they speak.
+  </p>
+
+  <div class="row">
+    <div class="facility-col">
+      <img src="{% static 'romlogos//customrom.jpg' %}" />
+      <h3>CUSTOM ROMS</h3>
+      <p>
+        A custom ROM essentially replaces the stock ROM or skin on your phone
+        with the one you choose to install. For example, if you have a Xiaomi or
+        Redmi phone running on MIUI but you don't like the interface, you can
+        install a custom ROM that will change the UI to stock Android or
+        something else you like.
+      </p>
+    </div>
+    <div class="facility-col">
+      <img src="{% static 'romlogos//magiskmod.png' %}" />
+      <h3>MODULES</h3>
+      <p>
+        Magisk modules are a simple way to apply system-level mods to your
+        device without having to make changes to your system files manually. All
+        you have to do is download the module, activate it through the Magisk
+        app, and then reboot your device for the changes to go into effect.
+      </p>
+    </div>
+    <div class="facility-col">
+      <img src="{% static 'romlogos//community.jpg' %}" />
+      <h3>COMMUNITY</h3>
+      <p>
+        We have here bunch of peoples that share same ideas as you. Join us on
+        our telegram and share the ideas with us. We will help you in any kind
+        of problem related with fleur devices.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h1>Opinion from Friends</h1>
+  <p>Keep your head high, and your middle finger higher.</p>
+
+  <div class="row">
+    <div class="test-col">
+      <img src="{% static 'gallary/anh.jpg' %}" />
+      <div>
+        <p>
+          The Uchiha were relocated to the edge of the village, isolating them
+          from the rest of the village and making it easier to monitor them.
+        </p>
+        <a href="https://t.me/nem1x" target="_blank" rel="noopener noreferrer"><h3>@nem1x</h3></a>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+    </div>
+    <div class="test-col">
+      <img src="{% static 'gallary/nemix.jpg' %}" />
+      <div>
+        <p>
+          The Uchiha were relocated to the edge of the village, isolating them
+          from the rest of the village and making it easier to monitor them.
+        </p>
+        <a href="https://t.me/vawnanh2801" target="_blank"><h3>@Anh</h3></a> 
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

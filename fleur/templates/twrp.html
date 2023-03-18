@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+  .twrp{
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .twrp h1{
+    text-align: center;
+  }
+  .twrp h3{
+    text-align: left;
+  }
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+</style>
+{% endblock %}
+{% block body %} 
+
+{% load crispy_forms_tags %}
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“If you believe something needs to exist, if it's something you want to use yourself, don't let anyone ever stop you from doing it.” —Tobias Lütke</i></p>
+	</div>
+  </div>
+<section class="twrp" style="margin-top:30px">
+    <h1>Hey let me help you install TWRP :</h1>
+  <h3>TWRP Flashing Steps :</h3> <br><br>
+    <ul>
+        <li>First Download the TWRP from here in your PC ( <a href="https://drive.google.com/file/d/1040neqV8MnNH_UI7BbAVqIVR9H5lkcUs/view?usp=drivesdk" target="_blank">Download</a> )</li>
+        <li>Download the boot.img file of the miui version you are using in your mobile (Soon we will provide the boot.img of miui roms)</li>
+        <li>Download the platform tools in your pc ( <a href="https://developer.android.com/studio/releases/platform-tools" target="_blank">From here</a> )
+        <li>Now extract the platform tools on a particular location in your PC.</li>
+        <li>Download the adb and fastboot drivers in your PC ( <a href="https://forum.xda-developers.com/t/official-tool-windows-adb-fastboot-and-drivers-15-seconds-adb-installer-v1-4-3.2588979/" target="_blank">here</a> )</li>
+        <li>Now open the command prompt in the platform tools folder.</li>
+        <li>Connect the PC and your device using a data transfer cable.</li>
+        <li>Enable the USB Debugging option from developer option in your mobile.</li>
+        <li>Write command in cmd : </li>
+        <ol>
+          <li>adb reboot bootloader (Now your device will be in fastboot mode)</li>
+          <li>fastboot flash boot "path of your TWRP file location"</li>
+          <li>fastboot reboot recovery</li>
+        </ol>
+        <li>Now go to install section in your device and open the download folder</li>
+        <li>Now click the install image option shown in the bottom. </li>
+        <li>Now click on boot image and swipe to flash.</li>
+        <li>After flashing boot image go to advance option in TWRP.</li>
+        <li>Choose option to flash current TWRP and swipe to flash twrp.</li>
+        <li>Now reboot to system.</li>
+        <li>Congratulation, TWRP flashed successfully.</li>
+    </ul>
+</section>
+
+{% endblock %}

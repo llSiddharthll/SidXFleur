@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}ROMS{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+  .container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+  button{
+  width: 103%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.miui button {
+  width: 50%;
+  margin-left: 25%;
+}
+.miui h1{
+  text-align: center;
+}
+.custom h1{
+  text-align:center;
+}
+hr{
+  border: 5px solid black;
+  color: black;
+}
+@media screen and (max-width: 600px) {
+  *{
+    font-size:small;
+  }
+  h1{
+    font-size:medium;
+  }
+  .col-25, .col-75, input[type=submit], button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+</style>
+{% endblock %}
+{% block body %} 
+<div class="w3-container">
+	<div class="w3-panel w3-sand w3-leftbar">
+	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+	  <i class="w3-serif w3-xlarge">“Don't worry about failure; you only have to be right once.” —Drew Houston</i></p>
+	</div>
+  </div>
+<section style="margin-top:30px">
+    <h1>Mods Links :</h1>
+    <table class="table table-primary table-hover">
+      <thead>
+        <tr>
+          <th scope="col">S.NO.</th>
+          <th scope="col">NAME</th>
+          <th scope="col">Android</th>
+          <th scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        {% for x in link %}
+        <tr class="table-warning">
+          <th scope="row">{{x.id}}</th>
+          <td><a href="details/{{x.id}}" id="romlink">{{x.mod_name}}</a></td>
+          <td>{{x.mod_android}}</td>
+          <td><a href="{{x.mod_link}}">Link</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+{% endblock %}
