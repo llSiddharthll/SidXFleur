@@ -1,10 +1,14 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block title %} Upload here {%endblock %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+Upload here
+{% endblock %}
 {% block css %}
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
-	.container h1{
+  	.container h1{
 		text-align: center;
 	}
 	.w3-container{
@@ -18,7 +22,6 @@
 			font-size: x-large;
 		}
 	}
-
   input[type="text"],
   input[type="date"],
   select,
@@ -46,7 +49,7 @@
     float:none;
   }
 
-  button {
+/*   button {
     width: 102%;
     background-color: #04aa6d;
     color: white;
@@ -56,7 +59,7 @@
     cursor: pointer;
     float:none;
   }
-
+ */
   input[type="submit"]:hover {
     background-color: #45a049;
   }
@@ -64,6 +67,7 @@
   .container {
     box-sizing: border-box;
     border-radius: 10px;
+    background-color: white;
     padding: 20px;
     padding-right: 20px;
   }
@@ -103,10 +107,7 @@
      {
       width: 99%;
       margin-top: 0;
-    }
-    button{
-      width: 105%;
-    }
+     }
   }
 </style>
 {% endblock %}
@@ -115,7 +116,7 @@
 <div class="w3-container">
 	<div class="w3-panel w3-sand w3-leftbar">
 	  <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
-	  <i class="w3-serif w3-xlarge">“Don't settle for average. Bring your best to the moment. Then, whether it fails or succeeds, at least you know you gave all you had.” —Angela Bassett</i></p>
+	  <i class="w3-serif w3-xlarge">“You can get everything in life you want if you will just help enough other people get what they want.” —Zig Ziglar</i></p>
 	</div>
   </div>
 <h1 id="main" style="text-align: center; padding-top: 40px;"><u> Bruh.. you came here, now provide a mod :</u></h1>
@@ -160,7 +161,15 @@
       <input type="submit" value="Submit">
     </div>
     </form><br>
-    <button class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
+    <button style="width: 102%;
+    background-color: #04aa6d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:none;
+    width:103.5%" class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
   </div><br><br>
 
 {% endblock %}

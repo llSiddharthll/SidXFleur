@@ -5,7 +5,6 @@ from django.db import models
 class Rom(models.Model):
     rom_name = models.CharField(max_length=50)
     rom_link = models.URLField(max_length=200,null=True, blank=True,unique=True)
-    rom_file = models.FileField(upload_to='documents/',null=True)
     android = models.FloatField()
     version = models.DateField()
     bugs = models.CharField(max_length=100,null=True)
@@ -17,7 +16,6 @@ class Rom(models.Model):
     
 class Mod(models.Model):
     mod_link = models.URLField(max_length=200, blank=True,unique=True)
-    mod_file = models.FileField(upload_to='documents/',null=True)
     mod_name = models.CharField(max_length=50)
     mod_android = models.CharField(max_length=50)
     purpose = models.CharField(max_length=150,null=True)

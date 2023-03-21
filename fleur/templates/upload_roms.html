@@ -46,17 +46,6 @@
     float:none;
   }
 
-  button {
-    width: 102%;
-    background-color: #04aa6d;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float:none;
-  }
-
   input[type="submit"]:hover {
     background-color: #45a049;
   }
@@ -103,9 +92,6 @@
      {
       width: 99%;
       margin-top: 0;
-    }
-    button{
-      width: 105%;
     }
   }
 </style>
@@ -202,7 +188,7 @@
           type="text"
           id="lname"
           name="credit"
-          placeholder="And credits goes too.."
+          placeholder="Just write name (don't use @)"
         />
       </div>
     </div>
@@ -240,7 +226,15 @@
     <div class="row">
       <input type="submit" value="Submit" />
     </div><br>
-    <button class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
+    <button style="width: 102%;
+    background-color: #04aa6d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:none;
+    width: 103.5%;" class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
   </div><br>
   </form>
   <br /><br>

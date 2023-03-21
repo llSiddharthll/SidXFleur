@@ -82,14 +82,13 @@ def upload(request):
 
 
 def upload_mods(request):
-    if request.method == "POST":
+    if request.method == 'POST' and request.FILES['mod_file']:
         name = request.POST.get('mod_name')
         link = request.POST.get('mod_link')
-        file = request.FILES.get('mod_file')
+        mod_file = request.FILES.get('mod_file')
         android = request.POST.get('mod_android')
         purpose = request.POST.get('purpose')
-        r = Mod.objects.create(mod_name=name, mod_link=link,
-                               mod_file=file, mod_android=android, purpose=purpose)
+        r = Mod.objects.create(mod_name=name, mod_link=link,mod_file=mod_file, mod_android=android, purpose=purpose)
         r.save()
         return redirect("/mods/")
 
@@ -155,4 +154,3 @@ def comment(request):
 
 def error_500(request):
     return render(request, '500.html', status=500)
-

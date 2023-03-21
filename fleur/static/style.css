@@ -11,17 +11,14 @@
   background-size: cover;
   position: relative;
 }
-nav .navbar-brand {
-  margin-top: -5px;
-}
 nav #phrase {
   text-align: center;
   margin-left: 170px;
   color: #fff;
 }
-@media (max-width: 700px) {
+@media screen {
   .header {
-    background-image: url("romlogos/mibg.jpg");
+    background-image: url("romlogos/mibg2.jpg");
   }
   nav #phrase {
     display: none;
@@ -431,3 +428,4 @@ h3 {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+

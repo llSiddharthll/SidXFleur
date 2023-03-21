@@ -4,23 +4,22 @@
 {% block title %}ROMS{% endblock %}
 {% block css %}
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <style>
   .container h1{
-		text-align: center;
-	}
-	.w3-container{
-		margin-top: 6%;
-	}
-	@media(max-width: 700px) {
-		.w3-container{
-			margin-top: 15%;
-		}
-		.container h1{
-			font-size: x-large;
-		}
-	}
-  button{
+    text-align: center;
+  }
+  .w3-container{
+    margin-top: 6%;
+  }
+  @media(max-width: 700px) {
+    .w3-container{
+      margin-top: 15%;
+    }
+    .container h1{
+      font-size: x-large;
+    }
+  }
+  /* button{
   width: 103%;
   background-color: #04AA6D;
   color: white;
@@ -28,34 +27,33 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-.miui button {
+  } */
+  .miui button {
   width: 50%;
   margin-left: 25%;
-}
-.miui h1{
+  }
+  .miui h1{
   text-align: center;
-}
-.custom h1{
+  }
+  .custom h1{
   text-align:center;
-}
-hr{
+  }
+  hr{
   border: 5px solid black;
   color: black;
-}
-@media screen and (max-width: 600px) {
+  }
+  @media screen and (max-width: 600px) {
   *{
     font-size:small;
   }
   h1{
     font-size:medium;
   }
-  .col-25, .col-75, input[type=submit], button {
+  .col-25, .col-75, input[type=submit]{
     width: 100%;
     margin-top: 0;
   }
-}
-
+  }
 </style>
 {% endblock %}
 {% block body %} 
@@ -70,7 +68,14 @@ hr{
 
   <div class="miui">
     <h1>MIUI Official Roms Link (old to new every rom) :</h1>
-    <button><a href="https://xiaomirom.com/en/rom/redmi-note-11s-poco-m4-pro-4g-fleur-global-fastboot-recovery-rom/" id="romlink">Click here to get rom</a></button>
+    <button style="width: 103%;
+  background-color: #04AA6D;
+  color: white;
+  margin-left: -3%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;"><a href="https://xiaomirom.com/en/rom/redmi-note-11s-poco-m4-pro-4g-fleur-global-fastboot-recovery-rom/" id="romlink">Click here to get rom</a></button>
 
   </div>
   <hr>
@@ -83,6 +88,7 @@ hr{
         <th scope="col">NAME</th>
         <th scope="col">Android</th>
         <th scope="col">Link</th>
+        <th scope="col">Credits</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -92,6 +98,7 @@ hr{
         <td><a href="rom_details/{{x.id}}" id="romlink">{{x.rom_name}}</a></td>
         <td>{{x.android}}</td>
         <td><a href="{{x.rom_link}}">Link</a></td>
+        <td><a href="https://t.me/{{x.credit}}">{{x.credit}}</a></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -99,30 +106,6 @@ hr{
 </div>
 </section>
 </div>
-<script>
-  
-  function searchTable() {
-      var input, filter, found, table, tr, td, i, j;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td");
-          for (j = 0; j < td.length; j++) {
-              if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                  found = true;
-              }
-          }
-          if (found) {
-              tr[i].style.display = "";
-              found = false;
-          } else {
-              tr[i].style.display = "none";
-          }
-      }
-  }
 
-</script>
   {% endblock %}
 
