@@ -82,13 +82,13 @@ def upload(request):
 
 
 def upload_mods(request):
-    if request.method == 'POST' and request.FILES['mod_file']:
+    if request.method == 'POST':
         name = request.POST.get('mod_name')
         link = request.POST.get('mod_link')
-        mod_file = request.FILES.get('mod_file')
         android = request.POST.get('mod_android')
+        mod_credit= request.POST.get('mod_credit')
         purpose = request.POST.get('purpose')
-        r = Mod.objects.create(mod_name=name, mod_link=link,mod_file=mod_file, mod_android=android, purpose=purpose)
+        r = Mod.objects.create(mod_name=name, mod_link=link,mod_credits=mod_credit, mod_android=android, purpose=purpose)
         r.save()
         return redirect("/mods/")
 
@@ -100,13 +100,12 @@ def upload_roms(request):
         name = request.POST.get('rom_name')
         android = request.POST.get('android')
         link = request.POST.get('rom_link')
-        file = request.FILES.get('rom_file')
         version = request.POST.get('version')
         bugs = request.POST.get('bugs')
         credit = request.POST.get('credit')
         fw = request.POST.get('fw_cat')
         boot = request.POST.get('boot_cat')
-        e = Rom.objects.create(rom_name=name, rom_link=link, rom_file=file, android=android,
+        e = Rom.objects.create(rom_name=name, rom_link=link, android=android,
                                version=version, bugs=bugs, credit=credit, fw=fw, boot=boot)
         e.save()
         return redirect("/roms/")

@@ -56,7 +56,9 @@ hr{
     margin-top: 0;
   }
 }
-
+#colm{
+  width: 5%;
+}
 </style>
 {% endblock %}
 {% block body %} 
@@ -71,18 +73,20 @@ hr{
     <table class="table table-primary table-hover">
       <thead>
         <tr>
-          <th scope="col">S.NO.</th>
+          <th scope="col" id="colm"></th>
           <th scope="col">NAME</th>
           <th scope="col">Android</th>
+          <th scope="col">Credits</th>
           <th scope="col">Link</th>
         </tr>
       </thead>
       <tbody id="myTable">
         {% for x in link %}
         <tr class="table-warning">
-          <th scope="row">{{x.id}}</th>
+          <th scope="row"><li></li></th>
           <td><a href="details/{{x.id}}" id="romlink">{{x.mod_name}}</a></td>
           <td>{{x.mod_android}}</td>
+          <td><a href="https://t.me/{{x.mod_credits}}">{{x.mod_credits}}</a></td>
           <td><a href="{{x.mod_link}}">Link</a></td>
         </tr>
         {% endfor %}

@@ -1,10 +1,62 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 {% block css %}
-{% endblock %}
-{% block body %} 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="{% static 'bootstrap-iso.css' %}" />
+    <style type="text/css">
+      .container h1{
+		text-align: center;
+	}
+	.w3-container{
+		margin-top: 6%;
+	}
+	@media(max-width: 700px) {
+		.w3-container{
+			margin-top: 15%;
+		}
+		.container h1{
+			font-size: x-large;
+		}
+	}
+      .container{
+        display: block;
+      }
 
-    <div class="container" id="main">
+      .comment-wrapper .panel-body {
+        max-height: 650px;
+        overflow:scroll;
+      }
+
+      .comment-wrapper .media-list .media img {
+        width: 64px;
+        height: 64px;
+        border: 2px solid #e5e7e8;
+      }
+
+      .comment-wrapper .media-list .media {
+        border-bottom: 1px dashed #efefef;
+        margin-bottom: 25px;
+      }
+      @media only screen and (max-width: 600px) {
+        .container{
+            padding-top: 40px;
+            width: 98%;
+        }
+      }
+    </style>
+    {% endblock %}
+    {% block body %}
+
+    <div class="w3-container">
+      <div class="w3-panel w3-sand w3-leftbar">
+        <p><i class="fa fa-quote-right w3-xxlarge w3-opacity"></i><br>
+        <i class="w3-serif w3-xlarge">“I will not lose, for even in defeat, there's a valuable lesson learned, so it evens up for me.” —Jay-Z</i></p>
+      </div>
+      </div>
+
+
+    <div class="bootstrap-iso">
+    <div class="container">
       <div class="row bootstrap snippets bootdeys">
         <div class="col-md-8 col-sm-12">
           <div class="comment-wrapper">
@@ -59,4 +111,8 @@
         </div>
       </div>
     </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
 {% endblock %}

@@ -17,9 +17,12 @@ class Rom(models.Model):
 class Mod(models.Model):
     mod_link = models.URLField(max_length=200, blank=True,unique=True)
     mod_name = models.CharField(max_length=50)
+    mod_credits= models.CharField(max_length=150,null=True)
     mod_android = models.CharField(max_length=50)
     purpose = models.CharField(max_length=150,null=True)
     def __str__(self):
+        if self.purpose==None and self.mod_credits==None:
+            return "Data not provided !!"
         return self.mod_name
     
 class Contact(models.Model):

@@ -150,6 +150,14 @@ Upload here
       </div>
       <div class="row">
         <div class="col-25">
+          <label for="lname">Credits(optional) :</label>
+        </div>
+        <div class="col-75">
+          <input required type="text" id="lname" name="mod_credit" placeholder="Android supported..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
           <label for="lname">Details(optional) :</label>
         </div>
         <div class="col-75">
@@ -168,8 +176,7 @@ Upload here
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float:none;
-    width:103.5%" class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
+    float:none;" class="row"><a href="{% url 'upload' %}" id="link"> Go Back to Previous Page </a></button>
   </div><br><br>
 
 {% endblock %}

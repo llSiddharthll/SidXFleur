@@ -11,14 +11,21 @@
   background-size: cover;
   position: relative;
 }
+.navbar{
+  border-bottom: 2px solid black;
+}
+.navbar-brand{
+  margin-top: -7px;
+}
 nav #phrase {
   text-align: center;
   margin-left: 170px;
-  color: #fff;
+  color: black;
+  font-family: 'Edu NSW ACT Foundation', cursive;
 }
-@media screen {
+@media (max-width: 700px) {
   .header {
-    background-image: url("romlogos/mibg2.jpg");
+    background-image: url("gallary//mibg3.jpg");
   }
   nav #phrase {
     display: none;
@@ -94,7 +101,7 @@ h3 {
 }
 
 .campus {
-  width: 80%;
+  width: 70%;
   margin: auto;
   text-align: center;
   padding-top: 100px;
@@ -108,7 +115,7 @@ h3 {
 }
 
 .campus-col img {
-  width: 100%;
+  width: 102%;
   display: block;
 }
 .layer {
