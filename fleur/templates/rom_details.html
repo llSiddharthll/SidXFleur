@@ -59,6 +59,8 @@
             <li>Flash this boot image (<a href="https://drive.google.com/file/d/1-dqw2tbg1mkRoe7R8d3Z3gDwUwgyr5n9/view?usp=drivesdk" target="_blank">here</a>)</li>
             {% elif x.boot == 'bia11' %}
             <li>Flash this boot image (<a href="https://drive.google.com/file/d/1-Y0XqHtykNuzlI7LdwpNTabkJUwsCnlN/view?usp=drivesdk" target="_blank">here</a>)</li>
+            {% elif x.boot == 'inlink' %}
+            <li>Boot.img provided in telegram post (<a href="{{x.rom_link}}" target="_blank">here</a>)</li>
             {% else %}
             <li>No need to Flash Boot image</li>
             {% endif %}

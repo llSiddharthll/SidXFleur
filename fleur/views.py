@@ -86,9 +86,10 @@ def upload_mods(request):
         name = request.POST.get('mod_name')
         link = request.POST.get('mod_link')
         android = request.POST.get('mod_android')
-        mod_credit= request.POST.get('mod_credit')
+        mod_credit = request.POST.get('mod_credit')
         purpose = request.POST.get('purpose')
-        r = Mod.objects.create(mod_name=name, mod_link=link,mod_credits=mod_credit, mod_android=android, purpose=purpose)
+        r = Mod.objects.create(mod_name=name, mod_link=link,
+                               mod_credits=mod_credit, mod_android=android, purpose=purpose)
         r.save()
         return redirect("/mods/")
 
@@ -133,7 +134,7 @@ def contact(request):
         subject = request.FILES.get('subject')
         message = request.POST.get('message')
         r = Contact.objects.create(name=name, email=email,
-                               subject=subject, message=message)
+                                   subject=subject, message=message)
         r.save()
         return redirect("/mods/")
     return render(request, 'contact.html')
@@ -141,15 +142,16 @@ def contact(request):
 
 def comment(request):
 
-    if request.method=="POST":
-        n=request.POST.get('Name')
-        mess=request.POST.get('Message')
-        e=Comment.objects.create(name=n, message=mess)
+    if request.method == "POST":
+        n = request.POST.get('Name')
+        mess = request.POST.get('Message')
+        e = Comment.objects.create(name=n, message=mess)
         e.save()
         return redirect('/comment/')
-        
-    data=Comment.objects.all().values()
-    return render(request,'comment.html',{'data': data})
+
+    data = Comment.objects.all().values()
+    return render(request, 'comment.html', {'data': data})
+
 
 def error_500(request):
     return render(request, '500.html', status=500)
