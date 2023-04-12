@@ -27,7 +27,7 @@ class NewUserForm(UserCreationForm):
 		return user
 
 class Upload(forms.Form):
-    upload=forms.ChoiceField(choices=CHOICES,help_text='What do You want to Upload Please Select..!')
+    upload=forms.ChoiceField(choices=CHOICES,help_text='Please select the files you want to upload !!')
 
         
 class Upload_mod(forms.Form):
