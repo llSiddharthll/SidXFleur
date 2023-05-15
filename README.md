@@ -39,7 +39,7 @@ Djano Framework, Python, Bootstrap5, Javascript, HTML, CSS...
 Clone the project
 
 ```bash
-  git clone [https://link-to-project](https://github.com/llSiddharthll/SidXFleur.git)
+  git clone https://github.com/llSiddharthll/SidXFleur.git
 ```
 
 Go to the project directory
