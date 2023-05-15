@@ -34,22 +34,18 @@ Join the Fleur ROMs and Modules community today and unlock a world of possibilit
 ## 🛠 Skills
 Djano Framework, Python, Bootstrap5, Javascript, HTML, CSS...
 
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
-
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone [https://link-to-project](https://github.com/llSiddharthll/SidXFleur.git)
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd SidXFleur
 ```
 
 Install dependencies
